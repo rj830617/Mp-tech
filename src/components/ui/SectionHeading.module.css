@@ -1,0 +1,24 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.title {
+  max-width: 14ch;
+  margin-top: 18px;
+  font-size: clamp(38px, 5.4vw, 72px);
+}
+
+.intro {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.dark .intro {
+  color: var(--muted-on-dark);
+}

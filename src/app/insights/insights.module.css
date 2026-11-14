@@ -1,0 +1,35 @@
+.section {
+  padding: clamp(48px, 7vw, 80px) 0 var(--section);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Article page ---------- */
+.article {
+  padding: clamp(48px, 7vw, 88px) 0;
+}
+
+.article > :global(.container) > * {
+  margin-inline: auto;
+}
+
+.more {
+  padding: clamp(48px, 7vw, 80px) 0 var(--section);
+  border-top: 1px solid var(--line);
+}
+
+.moreTitle {
+  margin-bottom: 32px;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.03em;
+}

@@ -1,0 +1,24 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.word {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
+.dot {
+  color: var(--violet);
+}
+
+.inverted .word {
+  color: var(--paper);
+}
+
+.inverted .dot {
+  color: var(--lime);
+}

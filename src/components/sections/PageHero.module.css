@@ -1,0 +1,58 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 5vw, 64px) 0 clamp(56px, 7vw, 96px);
+  border-bottom: 1px solid var(--line);
+}
+
+.glow {
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 760px;
+  max-height: 760px;
+  background:
+    radial-gradient(closest-side, rgba(91, 75, 255, 0.14), transparent 70%),
+    radial-gradient(closest-side at 30% 70%, rgba(212, 255, 63, 0.24), transparent 70%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+}
+
+.eyebrow {
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+.title {
+  max-width: 16ch;
+  margin-top: 20px;
+  font-size: clamp(44px, 7vw, 96px);
+}
+
+.compact {
+  max-width: 24ch;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.08;
+}
+
+.title :global(.serif) {
+  color: var(--violet);
+}
+
+.intro {
+  max-width: 620px;
+  margin-top: 24px;
+}
+
+.extra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: 36px;
+}

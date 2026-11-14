@@ -1,0 +1,90 @@
+/* Continues the dark panel started by ServicesOverview. */
+.section {
+  padding: var(--section) 0;
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 1px solid var(--line-on-dark);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line-on-dark);
+}
+
+.step {
+  position: relative;
+  padding: 36px 28px 8px 0;
+}
+
+.step + .step {
+  padding-left: 28px;
+  border-left: 1px solid var(--line-on-dark);
+}
+
+.number {
+  position: absolute;
+  top: 36px;
+  right: 28px;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--muted-on-dark);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-on-dark);
+  color: var(--lime);
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  font-size: 15px;
+  color: var(--muted-on-dark);
+}
+
+@media (max-width: 1080px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .step:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .step:nth-child(n + 3) {
+    border-top: 1px solid var(--line-on-dark);
+  }
+}
+
+@media (max-width: 640px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .step,
+  .step + .step {
+    padding: 32px 0 8px;
+    border-left: 0;
+  }
+  .step + .step {
+    border-top: 1px solid var(--line-on-dark);
+  }
+  .number {
+    top: 32px;
+    right: 0;
+  }
+  .icon {
+    margin-bottom: 24px;
+  }
+}

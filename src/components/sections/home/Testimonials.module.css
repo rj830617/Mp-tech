@@ -1,0 +1,114 @@
+.section {
+  padding-bottom: var(--section);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* ---------- Philosophy card ---------- */
+.mission {
+  display: flex;
+  flex-direction: column;
+  padding: 36px;
+  border-radius: var(--radius);
+  background: var(--violet);
+  color: #fff;
+}
+
+.missionEyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.statement {
+  margin: 20px 0 40px;
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.statement :global(.serif) {
+  color: var(--lime);
+}
+
+.vision {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.visionLabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.vision p {
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+/* ---------- Review cards ---------- */
+.quote {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+
+.text {
+  margin: 24px 0 32px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.author strong {
+  display: block;
+  font-size: 15px;
+}
+
+.author small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--lime);
+  font-weight: 700;
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mission {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

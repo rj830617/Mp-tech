@@ -1,0 +1,32 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item + .item::before {
+  content: "/";
+  color: var(--paper-3);
+}
+
+.item:last-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.link {
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--violet);
+}

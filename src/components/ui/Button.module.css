@@ -1,0 +1,64 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  transition:
+    transform 0.3s var(--ease),
+    background 0.3s var(--ease),
+    color 0.3s var(--ease),
+    border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.arrow {
+  transition: transform 0.3s var(--ease);
+}
+
+.button:hover .arrow {
+  transform: translateX(3px);
+}
+
+.sm {
+  height: 42px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+/* Variants */
+.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.dark:hover {
+  background: var(--violet);
+}
+
+.lime {
+  background: var(--lime);
+  color: var(--ink);
+}
+.lime:hover {
+  box-shadow: 0 0 0 6px rgba(212, 255, 63, 0.25);
+}
+
+.ghost {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+.ghost:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}

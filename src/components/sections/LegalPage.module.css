@@ -1,0 +1,82 @@
+.section {
+  padding: clamp(48px, 7vw, 80px) 0 var(--section);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.aside {
+  position: sticky;
+  top: calc(var(--header-height) + 24px);
+  display: grid;
+  gap: 32px;
+}
+
+.asideTitle {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.toc {
+  display: grid;
+  gap: 2px;
+  border-left: 1px solid var(--line);
+}
+
+.toc a {
+  display: flex;
+  gap: 10px;
+  padding: 7px 0 7px 16px;
+  margin-left: -1px;
+  border-left: 2px solid transparent;
+  font-size: 14px;
+  color: var(--muted);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.toc a span {
+  font-variant-numeric: tabular-nums;
+  color: #b3afa5;
+}
+
+.toc a:hover {
+  color: var(--ink);
+  border-left-color: var(--violet);
+}
+
+.others {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.others a:hover {
+  color: var(--violet);
+}
+
+.block + .block {
+  margin-top: 0.4em;
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    position: static;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--paper-2);
+  }
+}

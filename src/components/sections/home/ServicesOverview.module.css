@@ -1,0 +1,170 @@
+.section {
+  margin-top: clamp(40px, 6vw, 72px);
+  padding: var(--section) 0;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--ink-2);
+  border: 1px solid var(--line-on-dark);
+  transition:
+    border-color 0.3s,
+    transform 0.4s var(--ease);
+}
+
+.card:hover {
+  border-color: rgba(212, 255, 63, 0.4);
+  transform: translateY(-4px);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.number {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--muted-on-dark);
+}
+
+.cardTitle {
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.summary {
+  margin: 12px 0 28px;
+  font-size: 15px;
+  color: var(--muted-on-dark);
+}
+
+.list {
+  /* One row = 12px + 24px line + 12px padding + 1px border. Show 5 rows; longer lists scroll. */
+  --row: 49px;
+  --rows: 5;
+  height: calc(var(--row) * var(--rows));
+  margin-top: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-top: 1px solid var(--line-on-dark);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 255, 63, 0.5) transparent;
+}
+
+.list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(212, 255, 63, 0.5);
+}
+
+/* Fade the bottom edge to hint that more items are below. */
+.scrollable {
+  padding-right: 12px;
+  padding-bottom: 24px;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 48px), transparent);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted-on-dark);
+}
+
+.scrollHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--lime);
+}
+
+.scrollHint svg {
+  animation: nudge 1.6s ease-in-out infinite;
+}
+
+@keyframes nudge {
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+.list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-on-dark);
+  font-size: 15px;
+  color: rgba(250, 248, 244, 0.85);
+  transition:
+    color 0.2s,
+    padding 0.3s var(--ease);
+}
+
+.list a svg {
+  opacity: 0.4;
+  transition:
+    opacity 0.2s,
+    transform 0.3s var(--ease);
+}
+
+.list a:hover {
+  padding-left: 6px;
+  color: var(--lime);
+}
+
+.list a:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 1080px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card:last-child {
+    grid-column: auto;
+  }
+}

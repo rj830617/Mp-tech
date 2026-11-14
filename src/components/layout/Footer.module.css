@@ -1,0 +1,140 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding-top: 88px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr 1.3fr;
+  gap: 48px;
+  padding-bottom: 64px;
+}
+
+/* ---------- Brand column ---------- */
+.brandText {
+  max-width: 340px;
+  margin: 20px 0 28px;
+  font-size: 15px;
+  color: var(--muted-on-dark);
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line-on-dark);
+  color: var(--paper);
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.socials a:hover {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
+
+/* ---------- Link columns ---------- */
+.title {
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-on-dark);
+}
+
+.list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.list a {
+  color: rgba(250, 248, 244, 0.85);
+  transition: color 0.2s;
+}
+
+.list a:hover {
+  color: var(--lime);
+}
+
+.list .more {
+  color: var(--lime);
+}
+
+.contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(250, 248, 244, 0.85);
+}
+
+.contact svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--lime);
+}
+
+/* ---------- Bottom bar ---------- */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line-on-dark);
+  font-size: 14px;
+  color: var(--muted-on-dark);
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}
+
+.legal a:hover {
+  color: var(--paper);
+}
+
+/* ---------- Oversized wordmark ---------- */
+.giant {
+  margin-bottom: -0.08em;
+  font-size: clamp(90px, 22vw, 330px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.78;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
